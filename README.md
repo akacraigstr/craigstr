@@ -3,5 +3,5 @@
  * This is a web application that is just like Craigslist except its better!
  * Written By:
     * Adam Kaewell
-    * Katherine Sircusa
+    * Katherin Sircusa
     * Abby Zhang
