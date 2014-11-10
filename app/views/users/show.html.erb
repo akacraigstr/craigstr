@@ -1,0 +1,17 @@
+<h1>Welcome <%= current_user.email.capitalize %></h1>
+
+<fieldset>
+  <%= form_for @post do |form| %>
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+    <%= form.submit "Post" %>
+  <% end %>
+</fieldset>
+
+<ul>
+  <% current_user.posts.each do |post| %>
+    <li>
+      <%= post.content %>
+    </li>
+  <% end %>
+</ul>
