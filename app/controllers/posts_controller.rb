@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
   def create
-    current_user.posts << Post.new(post_params)
+    post = current_user.posts.build(post_params)
 
-    if current_user.save
+    if post.save
       redirect_to current_user
     else
       redirect_to :back
