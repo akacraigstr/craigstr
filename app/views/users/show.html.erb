@@ -2,16 +2,28 @@
 
 <fieldset>
   <%= form_for @post do |form| %>
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-    <%= form.submit "Post" %>
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+    <div>
+      <%= form.label :content %>
+      <%= form.text_field :content %>
+    </div>
+    <div>
+      <%= form.submit "Post" %>
+    </div>
   <% end %>
 </fieldset>
 
 <ul>
   <% current_user.posts.each do |post| %>
     <li>
-      <%= post.content %>
+      <fieldset>
+        <%= post.title %>
+        <br>
+        <%= post.content %>
+      </fieldset>
     </li>
   <% end %>
 </ul>
