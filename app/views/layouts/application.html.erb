@@ -11,7 +11,7 @@
   <% if signed_in? %>
     <%= link_to "Sign out", session_path, method: :delete %>
     <% if current_user.is_admin? %>
-      <h1> Only Admins can see meee! </h1>
+      <p> Only Admins can see meee! <p>
     <% end %>
   <% else %>
     <%= link_to "Sign in", new_session_path %>
