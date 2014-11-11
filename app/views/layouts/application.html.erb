@@ -15,6 +15,10 @@
     <%= link_to "Sign up", new_user_path %>
   <% end %>
 
+  <% if current_user.is_admin? %>
+    <%= link_to "Add a New Location", new_location_path %>
+  <% end %>
+
 <%= yield %>
 
 </body>
