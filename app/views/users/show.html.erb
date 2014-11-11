@@ -11,6 +11,9 @@
       <%= form.text_field :content %>
     </div>
     <div>
+      <%= f.collection_radio_buttons :location_id, Location.all, :id, :name %>
+    </div>
+    <div>
       <%= form.submit "Post" %>
     </div>
   <% end %>
