@@ -10,13 +10,10 @@
 
   <% if signed_in? %>
     <%= link_to "Sign out", session_path, method: :delete %>
+    <%= link_to "Add a New Location", new_location_path %>
   <% else %>
     <%= link_to "Sign in", new_session_path %>
     <%= link_to "Sign up", new_user_path %>
-  <% end %>
-
-  <% if current_user.is_admin? %>
-    <%= link_to "Add a New Location", new_location_path %>
   <% end %>
 
 <%= yield %>
