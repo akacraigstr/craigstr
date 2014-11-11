@@ -1,1 +1,8 @@
-<h1>Welcome to Geographic Region</h1>
+<h1>Where would you like to go?</h1>
+
+<ul>
+  <% @locations.each do |location| %>
+    <li>
+      <%= location.name %>
+    </li>
+<% end %>
