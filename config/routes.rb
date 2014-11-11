@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   resources :posts, only: [:create]
   resources :categories, only: [:new, :create]  
+  resources :locations, only: [:new, :create]  
 
   constraints Monban::Constraints::SignedIn.new do
     root "users#show", as: :home
