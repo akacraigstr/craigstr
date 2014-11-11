@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(version: 20141111150731) do
     t.datetime "updated_at"
   end
 
+  create_table "geographics", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: true do |t|
     t.integer  "user_id"
     t.datetime "created_at"
