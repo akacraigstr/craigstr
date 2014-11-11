@@ -8,13 +8,9 @@ class LocationsController < ApplicationController
   end
 
   def create
-    if current_user.is_admin?
-      @location = Location.new(location_params)
-      if @location.save
-        redirect_to locations_path
-      else
-        render :back
-      end
+    @location = Location.new(location_params)
+    if @location.save
+      redirect_to locations_path
     else
       render :back
     end
