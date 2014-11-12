@@ -1,0 +1,13 @@
+<fieldset>
+  <b><%= post.title %></b>
+  <br>
+  <%= post.content %>
+  <br>
+  <p> Posted in: <%= post.location.name %></p>
+  <div>
+    <%= button_to "Delete!", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+  <div>
+    <%= button_to "Edit", edit_post_path(post), method: :get %>
+  </div>
+</fieldset>
