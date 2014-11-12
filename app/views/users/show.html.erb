@@ -11,7 +11,7 @@
       <%= form.text_field :content %>
     </div>
     <div>
-      <%= form.collection_radio_buttons :location_id, Location.all, :id, :name, prompt: true %>
+      <%= form.collection_select :location_id, Location.all, :id, :name, prompt: true %>
     </div>
     <div>
       <%= form.submit "Post" %>
@@ -23,9 +23,11 @@
   <% current_user.posts.each do |post| %>
     <li>
       <fieldset>
-        <%= post.title %>
+        <b><%= post.title %></b>
         <br>
         <%= post.content %>
+        <br>
+        <p> Posted in: <%= post.location.name %></p>
       </fieldset>
     </li>
   <% end %>
