@@ -1,8 +1,0 @@
-<h1>Browse</h1>
-
-
-<%= form_tag new_search_path, method: :get do %>
-  <%= select_tag "location_search", options_from_collection_for_select(@locations,"id", "name") %>
-  <%= select_tag "category_search", options_from_collection_for_select(@categories, "id", "name") %>
-  <%= submit_tag "Search" %>
-<% end %>
