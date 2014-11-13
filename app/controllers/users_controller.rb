@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @post = Post.new
+    @posts = current_user.posts.page(params[:page])
   end
 
   def new
