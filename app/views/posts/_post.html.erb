@@ -1,17 +1,19 @@
 <fieldset>
 
-  <b><%= post.title %></b>
+  <b><%= link_to post.title, post_path(post) %></b>
   <br>
   <%= post.content %>
   <br>
   <p>Category: <%= post.category.name %> Posted in: <%= post.location.name %></p>
 
-  <div>
-    <%= button_to "Delete!", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
+  <% if post.user_id == current_user.id || current_user.is_admin %>
+    <div>
+      <%= button_to "Delete!", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
 
-  <div>
-    <%= button_to "Edit", edit_post_path(post), method: :get %>
-  </div>
+    <div>
+      <%= button_to "Edit", edit_post_path(post), method: :get %>
+    </div>
+  <% end %>
 
 </fieldset>
