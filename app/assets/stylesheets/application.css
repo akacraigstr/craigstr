@@ -1,7 +1,4 @@
 .session {
-  border: 1px solid;
-  display: inline;
-  position: relative;
   padding: 3px;
 }
 
@@ -12,4 +9,8 @@
 
 .form {
   padding: 10px;
+}
+
+p.inline {
+  display: inline;
 }
