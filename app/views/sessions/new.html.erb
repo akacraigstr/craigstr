@@ -1,5 +1,6 @@
-<%= form_for :session, url: session_path do |form| %>
-  <div>
+<div class="form">
+  <%= form_for :session, url: session_path do |form| %>
+    <div>
     <%= form.label :email %>
     <%= form.email_field :email %>
   </div>
@@ -11,3 +12,4 @@
     <%= form.submit "Sign in" %>
   </div>
 <% end %>
+</div>
