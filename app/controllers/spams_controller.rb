@@ -1,7 +1,7 @@
 class SpamsController < ApplicationController
   def create
     post = Post.find(params[:post_id])
-    current_user.spammed_posts << post
+    current_user.spammed_posts.append(post)
 
     redirect_to :back
   end
