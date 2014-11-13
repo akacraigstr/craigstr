@@ -1,15 +1,11 @@
 class SearchesController < ApplicationController
   def show
-    @posts = Post.query_location_and_category(location_query, category_query)
+    @posts = Post.where(search_params.slice(:location_id, :category_id))
   end
 
   private
 
-  def location_query
-    params[:location_id]
-  end
-
-  def category_query
-    params[:category_id]
+  def search_params
+    params.permit(:location_id, :category_id)
   end
 end
