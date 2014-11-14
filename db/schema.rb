@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(version: 20141113161509) do
   add_index "posts", ["location_id"], name: "index_posts_on_location_id", using: :btree
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
+  create_table "spams", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spams", ["post_id"], name: "index_spams_on_post_id", using: :btree
+  add_index "spams", ["user_id"], name: "index_spams_on_user_id", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "email",                           null: false
     t.string   "password_digest",                 null: false
