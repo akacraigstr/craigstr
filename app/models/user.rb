@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
   def unspam_post(post)
     spammed_posts.delete post
   end
+
+  def has_spam(post)
+    spammed_posts.include? post
+  end
 end

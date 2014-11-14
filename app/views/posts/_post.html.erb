@@ -21,7 +21,7 @@
     <p>posted by <%= post.user.email %></p>
   </div>
   <div>
-    <% if current_user.spammed_posts.include? post %>
+    <% if current_user.has_spam(post) %>
       <%= button_to "UnSpam", post_spam_path(post), method: :delete %>
     <% else %>
       <%= button_to "Spam", post_spam_path(post) %>
