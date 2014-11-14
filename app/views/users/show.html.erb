@@ -1,7 +1,6 @@
 <h1>Welcome <%= current_user.email.capitalize %></h1>
 
-<p> Add a Post: </p>
-<%= render "posts/form", post: @post %>
+<%= render "posts/form", post: Post.new %>
 
 <%= render @posts %>
 

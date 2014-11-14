@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
 
   def show
-    @post = Post.new
     @posts = current_user.posts.page(params[:page])
   end
 
